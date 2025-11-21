@@ -10,11 +10,13 @@ const __dirname = path.dirname(__filename);
 const app = express();
 app.use(cors());
 app.use(express.json());
+
+// Serve static files from public
 app.use(express.static(path.join(__dirname, "public")));
 
 const baseUrl = "https://api.fwc.gov.au/api/v1";
 
-// Proxy endpoint that fetches all pages and merges results
+// Proxy endpoint to fetch all pages and merge results
 app.post("/proxy", async (req, res) => {
   try {
     const { endpoint, params, apiKey } = req.body;
@@ -38,21 +40,22 @@ app.post("/proxy", async (req, res) => {
 
       const json = await response.json();
       const data = json.data || json.results || [];
-
       result.push(...data);
 
-      if (data.length < limit) break; // last page
+      if (data.length < limit) break;
       page++;
     }
 
-    // Return both total count and merged data
     res.json({ totalCount: result.length, data: result });
-
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: err.message });
   }
 });
 
+// Catch-all route: serve index.html for any other request (SPA)
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "index.html"));
+});
 
 app.listen(3000, () => console.log("Server running on http://localhost:3000"));
