@@ -31,7 +31,6 @@ Clone the repository with `git clone` and navigate to the project folder. Instal
 - Ensure your **FWC API subscription key** is valid.
 - The backend merges **all pages automatically**; large datasets may take a few seconds.
 - Arrays are displayed as **tables**, single objects as **key-value pairs**.
-- For very large tables, consider implementing frontend **pagination** for better performance.
 
 ## 📄 License
 MIT License
