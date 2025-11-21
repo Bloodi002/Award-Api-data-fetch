@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FWC API Explorer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>FWC API Explorer</h1>
+
+    <label>Subscription Key</label>
+    <input id="apiKey" placeholder="Enter your API key">
+
+    <label>Select Endpoint</label>
+    <select id="apiSelect"></select>
+
+    <div id="parameterFields"></div>
+
+    <button id="fetchBtn">Fetch All Data</button>
+
+    <h3>Results</h3>
+    <div id="results">No data loaded...</div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

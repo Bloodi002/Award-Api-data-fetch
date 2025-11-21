@@ -1,0 +1,10 @@
+body { font-family: Arial; background:#f5f5f5; margin:0; }
+.container { margin: 20px auto; max-width: 900px; background:#fff; padding:20px; border-radius:10px; box-shadow:0 0 10px #ccc; }
+label { font-weight:bold; margin-top:10px; display:block; }
+input, select, button { width:100%; padding:10px; margin-bottom:10px; border-radius:6px; border:1px solid #999; font-size:14px; }
+button { background:#0078ff; color:#fff; border:none; cursor:pointer; }
+button:hover { background:#005fcc; }
+#results { background:#222; color:#0f0; padding:15px; border-radius:6px; max-height:500px; overflow:auto; }
+table { border-collapse: collapse; width: 100%; margin-top: 10px; }
+th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+th { background-color: #eee; }
